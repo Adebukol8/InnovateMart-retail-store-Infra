@@ -26,13 +26,13 @@ variable "private_subnets" {
 variable "cluster_name" {
   type    = string
   default = "innovatemart-eks"
-}bfggtt
-  default = 2
 }
+
 variable "node_group_max_size" {
   type    = number
   default = 3
 }
+
 variable "node_group_min_size" {
   type    = number
   default = 1
