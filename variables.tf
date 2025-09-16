@@ -28,15 +28,7 @@ variable "cluster_name" {
   default = "innovatemart-eks"
 }
 
-variable "node_group_max_size" {
-  type    = number
-  default = 3
-}
 
-variable "node_group_min_size" {
-  type    = number
-  default = 1
-}
 
 # Optional: Kubernetes version
 variable "eks_version" {
