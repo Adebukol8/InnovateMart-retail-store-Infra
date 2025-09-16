@@ -10,8 +10,7 @@ data "aws_iam_policy_document" "eks_assume_role" {
 }
 
 resource "aws_iam_role" "eks_cluster_role" {
-  # Dynamic role name (avoids conflict)
-  name               = "${var.cluster_name}-cluster-role"
+  name               = "${var.cluster_name}-cluster-role" # Dynamic role name
   assume_role_policy = data.aws_iam_policy_document.eks_assume_role.json
 }
 
@@ -32,14 +31,13 @@ data "aws_iam_policy_document" "node_assume_role" {
 }
 
 resource "aws_iam_role" "eks_node_role" {
-  # Dynamic role name (avoids conflict)
-  name               = "${var.cluster_name}-node-role"
+  name               = "${var.cluster_name}-node-role" # Dynamic role name
   assume_role_policy = data.aws_iam_policy_document.node_assume_role.json
 }
 
 resource "aws_iam_role_policy_attachment" "eks_worker_attach" {
-  count      = 3
-  role       = aws_iam_role.eks_node_role.name
+  count = 3
+  role  = aws_iam_role.eks_node_role.name
   policy_arn = element([
     "arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy",
     "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly",
