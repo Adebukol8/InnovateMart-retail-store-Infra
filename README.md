@@ -1,4 +1,4 @@
-# InnovateMart Application Deployment
+# Innovatemart Application Deployment
 
 ### This project deploys the InnovateMart UI application on AWS EKS using Kubernetes manifests. The stack includes:
 - Deployment: UI service pods
