@@ -13,3 +13,4 @@
 - Ingress Class: alb
 - Service Name: ui
 - Service Port: 8080
+- note: The ALB address is still being provisioned. Once active, it will provide an external URL to access the application
